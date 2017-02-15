@@ -22,46 +22,46 @@ FoamFile
         type            empty;
         inGroups        1(empty);
         nFaces          0;
-        startFace       119250;
+        startFace       29700;
     }
     inlet
     {
         type            patch;
         nFaces          50;
-        startFace       119250;
-    }
-    atmosphere
-    {
-        type            patch;
-        nFaces          500;
-        startFace       119300;
+        startFace       29700;
     }
     wall
     {
         type            wall;
         inGroups        1(wall);
         nFaces          200;
-        startFace       119800;
+        startFace       29750;
     }
     outlet
     {
         type            patch;
-        nFaces          550;
-        startFace       120000;
+        nFaces          100;
+        startFace       29950;
     }
     front
     {
         type            wedge;
         inGroups        1(wedge);
-        nFaces          60000;
-        startFace       120550;
+        nFaces          15000;
+        startFace       30050;
     }
     back
     {
         type            wedge;
         inGroups        1(wedge);
-        nFaces          60000;
-        startFace       180550;
+        nFaces          15000;
+        startFace       45050;
+    }
+    atmosphere
+    {
+        type            patch;
+        nFaces          50;
+        startFace       60050;
     }
 )
 
