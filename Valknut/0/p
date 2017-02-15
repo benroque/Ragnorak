@@ -1,0 +1,43 @@
+// This is a test of the Pressure I.C.s
+
+//-----------------------------------------------
+//Formatting
+
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      p;
+}
+
+//------------------------------------------------
+
+dimensions        [1 -1 -2 0 0 0 0];
+
+internalField        uniform 1;
+
+boundaryField
+{
+    inlet
+    {
+        type         fixedValue;
+        value        1;
+    }
+
+    outlet
+    {
+        type          waveTransmissive;
+        field         p;
+        psi           Thermo:psi;
+        gamma         1.4;
+        fieldInf      1;
+        lInf          3;
+        value         uniform 1;
+    }
+
+    walls
+    {
+        type          zeroGradient;
+    }
+}
