@@ -31,6 +31,12 @@ boundaryField
       value   uniform 1;
     }
 
+    atmosphere
+    {
+      type    fixedValue;
+      value   uniform 1;
+    }
+
     wall
     {
       type    zeroGradient;

@@ -8,7 +8,7 @@ FoamFile
 
 dimensions    [0 1 -1 0 0 0 0];
 
-internalField uniform (.5 0 0);
+internalField uniform (0.02 0 0);
 
 boundaryField
 {
@@ -23,9 +23,15 @@ boundaryField
     value uniform (1 0 0);
   }
 
+  atmosphere
+  {
+    type  fixedValue;
+    value uniform (0.02 0 0);
+  }
+
   wall
   {
-    type  zeroGradient;
+    type  noSlip;
   }
 
   outlet
