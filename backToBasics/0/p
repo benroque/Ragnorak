@@ -8,7 +8,7 @@ FoamFile
 
 dimensions      [1 -1 -2 0 0 0 0];
 
-internalField uniform .001;
+internalField uniform 1;
 
 boundaryField
 {
@@ -20,13 +20,13 @@ boundaryField
   inlet
   {
     type  fixedValue;
-    value uniform .001;
+    value uniform 10;
   }
 
   atmosphere
   {
     type     fixedValue;
-    value    .001;
+    value    uniform 1;
   }
 
   wall
@@ -36,7 +36,13 @@ boundaryField
 
   outlet
   {
-    type     zeroGradient;
+    type            waveTransmissive;
+    field           p;
+    psi             thermo:psi;
+    gamma           1.22;
+    fieldInf        10;
+    lInf            10;
+    value           uniform 1;
   }
 
   front
